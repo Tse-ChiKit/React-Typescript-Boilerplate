@@ -34,10 +34,7 @@
     "typescript": "^4.4.3"
   },
   "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "commitlint -E $1"
-    }
+    "hooks": {}
   },
   "lint-staged": {
     "*.{ts,tsx,js}": [
