@@ -29,6 +29,7 @@ module.exports = {
       node: {
         extensions: ['.tsx', '.ts', '.js', '.json'],
       },
+      typescript: {},
     },
   },
   plugins: ['react', 'promise', '@typescript-eslint'],
@@ -39,9 +40,14 @@ module.exports = {
       {
         ts: 'never',
         tsx: 'never',
-        json: 'never',
         js: 'never',
       },
     ],
+    '@typescript-eslint/no-var-requires': OFF,
+    '@typescript-eslint/explicit-module-boundary-types': OFF,
+    'react/jsx-filename-extension': [ERROR, { extensions: ['.tsx', 'ts', '.jsx', 'js'] }],
+    'import/no-extraneous-dependencies': [ERROR, { devDependencies: true }],
+    'no-use-before-define': OFF,
+    'import/no-unresolved': ERROR,
   },
 };
