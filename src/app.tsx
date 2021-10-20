@@ -1,8 +1,6 @@
 import React from 'react';
-import Home from 'Page/Home';
-import ProductList from 'Page/ProductList';
-
 import { Switch, Route, Link } from 'react-router-dom';
+import routes from './routes';
 
 function App() {
   return (
@@ -18,8 +16,12 @@ function App() {
         </ul>
       </nav>
       <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/productList" component={ProductList} />
+        {routes.map((route) => {
+          if (route.exact) {
+            return <Route key={route.path} exact path={route.path} component={route.component} />;
+          }
+          return <Route key={route.path} path={route.path} component={route.component} />;
+        })}
       </Switch>
     </main>
   );
