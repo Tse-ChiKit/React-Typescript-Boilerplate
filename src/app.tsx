@@ -1,8 +1,11 @@
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { Switch, Route, Link } from 'react-router-dom';
 import routes from './routes';
 
-function App() {
+const App = () => {
+  const counter = useSelector((state: any) => state.counter);
+
   return (
     <main>
       <nav>
@@ -25,6 +28,6 @@ function App() {
       </Switch>
     </main>
   );
-}
+};
 
 export default App;

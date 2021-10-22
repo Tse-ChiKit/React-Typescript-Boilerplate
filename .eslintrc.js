@@ -49,5 +49,6 @@ module.exports = {
     'import/no-extraneous-dependencies': [ERROR, { devDependencies: true }],
     'no-use-before-define': OFF,
     'import/no-unresolved': ERROR,
+    'no-underscore-dangle': OFF,
   },
 };
