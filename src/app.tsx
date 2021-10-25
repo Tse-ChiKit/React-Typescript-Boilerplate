@@ -2,10 +2,12 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Switch, Route, Link } from 'react-router-dom';
 import routes from './routes';
+import rootreducer from './reducers';
+
+type RootState = ReturnType<typeof rootreducer>;
 
 const App = () => {
-  const counter = useSelector((state: any) => state.counter);
-
+  const counter = useSelector((state: RootState) => state.counter);
   return (
     <main>
       <nav>
